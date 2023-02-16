@@ -1,19 +1,14 @@
 import logo from './logo.svg';
 
+import { BrowserRouter } from 'react-router-dom'
+import Router from "main/routes/router"
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         App Pokedex
-        </p>
-        <p>
-          Julian Rivera
-        </p>
-      </header>
-    </div>
-  );
+      <BrowserRouter >
+          <Router />
+      </BrowserRouter>
+  )
 }
 
 export default App;
