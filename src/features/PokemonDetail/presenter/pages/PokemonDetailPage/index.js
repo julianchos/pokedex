@@ -1,12 +1,14 @@
 // material
 import { Container, Typography } from '@mui/material';
+import React from "react";
 
-const PokemonDetailPage = () => {
+const PokemonDetailPage = ({id}) => {
     return (
         <Container maxWidth={'xl'}>
-            <Typography variant="h3" component="h1" paragraph>
-                Detalle
+            <Typography variant="h3" component="h3" paragraph sx={{fontFamily: 'Pokemon , sans-serif', color: '#1d8696'}}>
+                El Pokémon {id}
             </Typography>
+
             <Typography gutterBottom>
                 Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod
                 ligula urna in dolor. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Phasellus blandit leo

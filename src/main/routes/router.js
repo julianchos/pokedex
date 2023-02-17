@@ -31,7 +31,7 @@ export default function Router() {
       path: '/',
       element: <Layout />,
       children: [
-        { path: '/pokemon/:id', element: (<PokemonDetailPage />) },
+        { path: '/pokemon/:id', element: (({id})=><PokemonDetailPage id={id}/>) },
       ]
     },
     {

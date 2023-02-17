@@ -41,14 +41,33 @@ function ResponsiveAppBar() {
                             ml: 1,
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'Pokemon , sans-serif',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            fontSize: '30px',
+                            color: '#ffcb08',
+                            textDecoration: 'none',
+                        }}
+                    >
+                        PoGo
+                    </Typography>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="/"
+                        sx={{
+                            ml: 1,
+                            mr: 2,
+                            display: { xs: 'none', md: 'flex' },
+                            fontFamily: 'Monserrat , sans-serif',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
-                        Po Go Guide
+                        Guide
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -78,11 +97,12 @@ function ResponsiveAppBar() {
                             onClose={handleCloseNavMenu}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
+
                             }}
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Typography sx={{color: '#1d8696', fontFamily:'Monserrat , sans-serif'}} textAlign="center">{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -99,14 +119,34 @@ function ResponsiveAppBar() {
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
-                            fontFamily: 'monospace',
+                            fontFamily: 'Pokemon , sans-serif',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
+                            fontSize: '30px',
+                            color: '#ffcb08',
+                            textDecoration: 'none',
+                        }}
+                    >
+                        PoGo
+                    </Typography>
+                    <Typography
+                        variant="h5"
+                        noWrap
+                        component="a"
+                        href=""
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'flex', md: 'none' },
+                            flexGrow: 1,
+                            fontFamily: 'Pokemon , sans-serif',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            fontSize: '30px',
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
-                        Po Go Guide
+                        Guide
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -114,7 +154,7 @@ function ResponsiveAppBar() {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: '#1d8696', fontFamily:'Monserrat , sans-serif', display: 'block' }}
                             >
                                 {page}
                             </Button>

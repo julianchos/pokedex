@@ -9,4 +9,11 @@ export const POKEMON_API = {
             data: null
         })
     },
+    getPokemonDetail: args => {
+        return fetchHttp({
+            path: `${BASE_URL}/${args.id}`,
+            method: 'GET',
+            data: null
+        })
+    },
 }
