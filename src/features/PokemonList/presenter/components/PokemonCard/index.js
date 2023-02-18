@@ -23,8 +23,6 @@ const PokemonCards = ({ data }) => {
                 const response = await pokemon.getPokemonDetail({
                     id: data.name
                 })
-
-                console.log(response.data.name)
                 if (response && response.data && Object.keys(response.data).length>0) {
                     setPokemonDetail(response.data)
                 }
@@ -38,16 +36,16 @@ const PokemonCards = ({ data }) => {
     }
 
     return (
-        <Grid width={1} spacing={3}>
+        <Box >
             {pokemonDetail &&
                 <>
-                    <Grid container justifyContent="center" spacing={4} marginBottom={3} marginTop={1}>
-                        <Grid item xs={2} alignItems="center">
-                            <img className="animated infinite pulse delay-2s" style={{marginTop: '-30px'}} src={pokemonDetail.sprites && pokemonDetail.sprites.other && pokemonDetail.sprites.other.home && pokemonDetail.sprites.other.home.front_default} width={170} />
+                    <Grid container sx={{width: '100%'}} justifyContent="center" spacing={4} marginBottom={3} marginTop={1}>
+                        <Grid item xs={4} alignItems="center">
+                            <img className="animated infinite pulse delay-2s" onClick={handleSelectPokemon} style={{marginTop: '-30px', cursor: 'pointer'}} src={pokemonDetail.sprites && pokemonDetail.sprites.other && pokemonDetail.sprites.other.home && pokemonDetail.sprites.other.home.front_default} width={170} />
                         </Grid>
-                        <Grid item xs={10}>
-                            <Typography onClick={handleSelectPokemon} sx={{ fontFamily:'Monserrat , sans-serif', fontSize: '21px', color: '#44696c', fontWeight: 600, textTransform: 'uppercase' }}>
-                                {pokemonDetail.name}
+                        <Grid item xs={8}>
+                            <Typography onClick={handleSelectPokemon} sx={{ fontFamily:'Monserrat , sans-serif', fontSize: '21px', color: '#44696c', fontWeight: 600, textTransform: 'uppercase', cursor: 'pointer' }}>
+                                {data.name || pokemonDetail.name}
                             </Typography>
                             <Typography  sx={{ fontFamily:'Monserrat , sans-serif',  fontSize: '13px', color: '#111', fontWeight: 600, textTransform: 'uppercase' }}>
                                 {pokemonDetail.types && pokemonDetail.types.reduce((res, { type: { name } }) => res + ' / ' + (name ?? ''), '').slice(2)}
@@ -147,7 +145,7 @@ const PokemonCards = ({ data }) => {
 
                 </>
             }
-        </Grid>
+        </Box>
     )
 }
 

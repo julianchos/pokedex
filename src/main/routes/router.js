@@ -1,7 +1,9 @@
 import { Suspense, lazy, useEffect } from 'react'
 import { useRoutes, useLocation, Navigate } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
-
+import {
+  Grid
+} from '@mui/material'
 // layouts
 import Layout from 'main/layouts'
 
@@ -9,7 +11,16 @@ import Layout from 'main/layouts'
 const Loadable = (Component) => (props) => {
   return (
     <Suspense
-      fallback={<CircularProgress color="secondary" />}
+      fallback={
+        <Grid container sx={{width: '100%'}} justifyContent="center" spacing={4} marginBottom={3} marginTop={1}>
+          <Grid item alignItems="center">
+            <CircularProgress color="secondary" />
+          </Grid>
+          <Grid item alignItems="center">
+            <span>Cargando...</span>
+          </Grid>
+        </Grid>
+      }
     >
       <Component {...props} />
     </Suspense>
@@ -31,7 +42,7 @@ export default function Router() {
       path: '/',
       element: <Layout />,
       children: [
-        { path: '/pokemon/:id', element: (({id})=><PokemonDetailPage id={id}/>) },
+        { path: '/pokemon/:id', element: (<PokemonDetailPage />) },
       ]
     },
     {
