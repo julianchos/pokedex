@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
@@ -25,16 +25,24 @@ const MainStyle = styled('div')({
   }*/
 });
 
+
+
 // ----------------------------------------------------------------------
-const Layout = () => {
-  return (
+const Layout = memo(() => {
+    const [context, setContext] = useState(null);
+
+    const handleChangeFilter = (text) => {
+        setContext(text)
+    };
+
+    return (
     <RootStyle>
-        <ResponsiveAppBar/>
+        <ResponsiveAppBar onChangeFilter={handleChangeFilter}/>
         <MainStyle>
-            <Outlet />
+            <Outlet context={[context]}/>
         </MainStyle>
     </RootStyle>
   );
-}
+})
 
 export default Layout

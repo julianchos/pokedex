@@ -19,7 +19,7 @@ export const fetchHttp = async (args) => {
       return res.json()
     })
     .then((data) => {
-      console.log('[Data from Api Pokemon]: ', data)
+      //console.log('[Data from Api Pokemon]: ', data)
       return { data, error: null }
     })
     .catch((error) => {

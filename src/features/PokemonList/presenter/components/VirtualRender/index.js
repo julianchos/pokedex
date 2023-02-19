@@ -5,14 +5,14 @@ import PokemonCards from 'features/PokemonList/presenter/components/PokemonCard'
 
 const Loader = ({style}) => (
     <div style={style}>
-        <Grid container sx={{width: '100%'}} justifyContent="center" spacing={4} marginBottom={3} marginTop={1}>
+        {/*<Grid container sx={{width: '100%'}} justifyContent="center" spacing={4} marginBottom={3} marginTop={1}>
             <Grid item alignItems="center">
                 <CircularProgress color="secondary" />
             </Grid>
             <Grid item alignItems="center">
-                <span>Cargando item...</span>
+                <span>Loading item...</span>
             </Grid>
-        </Grid>
+        </Grid>*/}
     </div>
 )
 
@@ -25,7 +25,7 @@ const Item = ({ item, index, style }) => (
 );
 
 const VirtualRender = ({ item, index, style, loading }) => {
-    return loading ? <Loader style={style} /> : <Item item={item} index={index} style={style} />
+    return (loading) ? <Loader style={style} /> : <Item item={item} index={index} style={style} />
 }
 
 export default VirtualRender
